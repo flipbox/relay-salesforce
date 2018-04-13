@@ -34,7 +34,7 @@ class Update extends HttpRelayBuilder
         LoggerInterface $logger = null,
         $config = []
     ) {
-        parent::__construct($instance, $authorization, $logger);
+        parent::__construct($instance, $authorization, $logger, $config);
 
         $this->addPayload($payload, $logger)
             ->addUri($sObject, $id, $logger)

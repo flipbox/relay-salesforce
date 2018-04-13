@@ -31,7 +31,7 @@ class Get extends HttpRelayBuilder
         LoggerInterface $logger = null,
         $config = []
     ) {
-        parent::__construct($instance, $authorization, $logger);
+        parent::__construct($instance, $authorization, $logger, $config);
 
         $this->addUri($sObject, $id, $logger)
             ->addCache($cache, $id, $logger);

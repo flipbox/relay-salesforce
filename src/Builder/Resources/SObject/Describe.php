@@ -29,7 +29,7 @@ class Describe extends HttpRelayBuilder
         LoggerInterface $logger = null,
         $config = []
     ) {
-        parent::__construct($instance, $authorization, $logger);
+        parent::__construct($instance, $authorization, $logger, $config);
 
         $this->addUri($sObject, $logger)
             ->addCache($cache, $logger);
