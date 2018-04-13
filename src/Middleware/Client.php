@@ -17,7 +17,6 @@ namespace Flipbox\Relay\Salesforce\Middleware;
 use Flipbox\Relay\Middleware\AbstractMiddleware;
 use GuzzleHttp\Client as GuzzleHttpClient;
 use GuzzleHttp\Exception\ClientException;
-use GuzzleHttp\Psr7\Response as HttpResponse;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -81,11 +80,11 @@ class Client extends AbstractMiddleware
     }
 
     /**
-     * @param HttpResponse $httpResponse
+     * @param ResponseInterface $httpResponse
      * @param ResponseInterface $response
      * @return ResponseInterface
      */
-    private function syncResponse(HttpResponse $httpResponse, ResponseInterface $response)
+    private function syncResponse(ResponseInterface $httpResponse, ResponseInterface $response)
     {
         // Add headers
         foreach ($httpResponse->getHeaders() as $name => $value) {
