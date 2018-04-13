@@ -64,9 +64,13 @@ class Client extends AbstractMiddleware
             );
             $httpResponse = $e->getResponse();
         }
-
+        
         // Sync responses
-        return $this->syncResponse($httpResponse, $response);
+        if($httpResponse !== null) {
+            $response = $this->syncResponse($httpResponse, $response);
+        }
+
+        return $response;
     }
 
     /**
