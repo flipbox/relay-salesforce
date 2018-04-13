@@ -89,5 +89,4 @@ class Update extends HttpRelayBuilder
             'pool' => $cache
         ], 'token');
     }
-
 }
