@@ -17,6 +17,6 @@ class Describe extends Resource
      */
     protected function assemblePath(): string
     {
-        return parent::assemblePath() . 'describe/';
+        return parent::assemblePath() . 'sobjects/';
     }
 }
