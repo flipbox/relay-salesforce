@@ -1,15 +1,9 @@
 <?php
 
 /**
- * REST Middleware
- *
- * @package    Force
- * @author     Flipbox Factory <hello@flipboxfactory.com>
- * @copyright  2010-2016 Flipbox Digital Limited
- * @license    https://flipboxfactory.com/software/craft/force/license
- * @version    Release: 1.3.0
- * @link       https://github.com/FlipboxFactory/Force
- * @since      Class available since Release 1.0.0
+ * @copyright  Copyright (c) Flipbox Digital Limited
+ * @license    https://github.com/flipbox/relay-salesforce/blob/master/LICENSE.md
+ * @link       https://github.com/flipbox/relay-salesforce
  */
 
 namespace Flipbox\Relay\Salesforce\Middleware;
@@ -20,6 +14,10 @@ use GuzzleHttp\Exception\ClientException;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * @author Flipbox Factory <hello@flipboxfactory.com>
+ * @since 1.0.0
+ */
 class Client extends AbstractMiddleware
 {
     /**
