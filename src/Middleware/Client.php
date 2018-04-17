@@ -55,7 +55,7 @@ class Client extends AbstractMiddleware
                 ->send($request);
         } catch (ClientException $e) {
             $this->error(
-                "API Exception",
+                "SALESFORCE API EXCEPTION: {exception}",
                 [
                     'exception' => $e
                 ]
@@ -65,6 +65,15 @@ class Client extends AbstractMiddleware
         
         // Sync responses
         if ($httpResponse !== null) {
+            $this->info(
+                "SALESFORCE API RESPONSE: {response}",
+                [
+                    'response' => $httpResponse->getBody()
+                ]
+            );
+
+            $httpResponse->getBody()->rewind();
+
             $response = $this->syncResponse($httpResponse, $response);
         }
 
