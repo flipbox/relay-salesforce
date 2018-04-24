@@ -1,7 +1,7 @@
 # Changelog
 All Notable changes to `flipboxdigital\relay-salesforce` will be documented in this file
 
-## Unreleased
+## 2.0.0 - 2018-04-24
 ### Changed
 - All caching now implements [PSR-16](https://www.php-fig.org/psr/psr-16/)
 
