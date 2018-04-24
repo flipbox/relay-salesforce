@@ -96,7 +96,7 @@ class Upsert extends HttpRelayBuilder
      */
     protected function addCache(CacheInterface $cache, string $key = null, LoggerInterface $logger = null)
     {
-        if(empty($key)) {
+        if (empty($key)) {
             return $this;
         }
 
