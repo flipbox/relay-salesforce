@@ -8,13 +8,13 @@
 
 namespace Flipbox\Relay\Salesforce\Builder\Resources\SObject\External;
 
-use Flipbox\Relay\Middleware\Stash as CacheMiddleware;
+use Flipbox\Relay\Middleware\SimpleCache as CacheMiddleware;
 use Flipbox\Relay\Salesforce\AuthorizationInterface;
 use Flipbox\Relay\Salesforce\Builder\HttpRelayBuilder;
 use Flipbox\Relay\Salesforce\InstanceInterface;
 use Flipbox\Relay\Salesforce\Middleware\Resource\SObject\External;
-use Psr\Cache\CacheItemPoolInterface;
 use Psr\Log\LoggerInterface;
+use Psr\SimpleCache\CacheInterface;
 
 /**
  * @author Flipbox Factory <hello@flipboxfactory.com>
@@ -26,7 +26,7 @@ class Get extends HttpRelayBuilder
      * Upsert constructor.
      * @param InstanceInterface $instance
      * @param AuthorizationInterface $authorization
-     * @param CacheItemPoolInterface $cache
+     * @param CacheInterface $cache
      * @param $sObject
      * @param string $fieldName
      * @param string $fieldValue
@@ -36,7 +36,7 @@ class Get extends HttpRelayBuilder
     public function __construct(
         InstanceInterface $instance,
         AuthorizationInterface $authorization,
-        CacheItemPoolInterface $cache,
+        CacheInterface $cache,
         string $sObject,
         string $fieldName,
         string $fieldValue,
@@ -68,16 +68,16 @@ class Get extends HttpRelayBuilder
     }
 
     /**
-     * @param CacheItemPoolInterface $cache
+     * @param CacheInterface $cache
      * @param LoggerInterface|null $logger
      * @return $this
      */
-    protected function addCache(CacheItemPoolInterface $cache, LoggerInterface $logger = null)
+    protected function addCache(CacheInterface $cache, LoggerInterface $logger = null)
     {
         return $this->addBefore('cache', [
             'class' => CacheMiddleware::class,
             'logger' => $logger ?: $this->getLogger(),
-            'pool' => $cache
+            'cache' => $cache
         ], 'token');
     }
 }
