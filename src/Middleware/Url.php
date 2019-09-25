@@ -54,7 +54,7 @@ class Url extends AbstractMiddleware
         $uri = $request->getUri();
         return $request->withUri(
             $uri->withPath(
-                rtrim($this->url,"/")  . "/"
+                rtrim($this->url, "/")  . "/"
             )
         );
     }
