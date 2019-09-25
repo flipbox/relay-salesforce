@@ -1,7 +1,7 @@
 # Changelog
 All Notable changes to `flipboxdigital\relay-salesforce` will be documented in this file
 
-## Unreleased
+## 2.1.0 - 2019-09-25
 ### Added
 - Ability to call a resource url directly. Useful when an api response gives it to you (more results, nexted resources, etc).
 
