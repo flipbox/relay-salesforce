@@ -1,6 +1,10 @@
 # Changelog
 All Notable changes to `flipboxdigital\relay-salesforce` will be documented in this file
 
+## Unreleased
+### Added
+- Ability to call a resource url directly. Useful when an api response gives it to you (more results, nexted resources, etc).
+
 ## 2.0.0 - 2018-04-24
 ### Changed
 - All caching now implements [PSR-16](https://www.php-fig.org/psr/psr-16/)
