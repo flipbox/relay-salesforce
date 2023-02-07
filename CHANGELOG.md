@@ -1,6 +1,10 @@
 # Changelog
 All Notable changes to `flipboxdigital\relay-salesforce` will be documented in this file
 
+## 3.0.0 - 2023-02-02
+### Changed
+- Updated dependencies: `flipboxdigital/relay-simplecache` for php 8 compatibility
+
 ## 2.1.0 - 2019-09-25
 ### Added
 - Ability to call a resource url directly. Useful when an api response gives it to you (more results, nexted resources, etc).
